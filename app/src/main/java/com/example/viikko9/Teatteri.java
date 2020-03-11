@@ -1,8 +1,12 @@
 package com.example.viikko9;
 
+import java.util.ArrayList;
+
 public class Teatteri {
     private String id;
     private String nimi;
+
+
 
     public Teatteri(String id, String nimi){
         this.id = id;

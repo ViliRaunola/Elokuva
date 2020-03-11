@@ -16,23 +16,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.397" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="248dp"
-        android:layout_height="183dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.552"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Hae_nappi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hae"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
@@ -87,5 +75,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+    <ListView
+        android:id="@+id/lista"
+        android:layout_width="375dp"
+        android:layout_height="224dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Hae_nappi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
