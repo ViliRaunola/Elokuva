@@ -74,8 +74,9 @@ public class xml {
                 Node node = lista.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) node;
-                    String[] aika = element.getElementsByTagName("dttmShowStart").item(0).getTextContent().split("T", 2);
-                    String paiva_ja_naytos = aika[0] + " " + aika[1] + " " + element.getElementsByTagName("Title").item(0).getTextContent();
+                    String[] aika = element.getElementsByTagName("dttmShowStart").item(0).getTextContent().split("T", 2); //2020-03-12T12:30:00
+                    String[] klo = aika[1].split(":");
+                    String paiva_ja_naytos = aika[0] + " " + klo[0] + ":" + klo[1] + " " + element.getElementsByTagName("Title").item(0).getTextContent();//2020-03-12 12:30
                     naytokset.add(paiva_ja_naytos);
                 }
             }
