@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Teatteri {
     private String id;
     private String nimi;
-
+    public ArrayList<String> teatterin_elokuvat = new ArrayList<>();
 
 
     public Teatteri(String id, String nimi){
@@ -20,6 +20,7 @@ public class Teatteri {
     public String getId(){
         return this.id;
     }
+
 
     @Override
     public String toString(){

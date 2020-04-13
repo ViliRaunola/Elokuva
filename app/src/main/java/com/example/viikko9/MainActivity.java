@@ -61,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
 
         final ArrayAdapter adapter3 = new ArrayAdapter(this,android.R.layout.simple_list_item_1, elokuvat_ajalta);
 
+        xml2.luexml(); //Luetaan heti alkuun finkinon xml-tiedosto, jotta saadaan spinneri täytettyä
+        spinner.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+
         hae_nappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 pvm = pvm_kentta.getText().toString();
                 kloa = kloa_kentta.getText().toString(); //14:22
                 klol = klol_kentta.getText().toString(); //16:10
-                xml2.luexml();
+                //xml2.luexml();
 
                 if(pvm == ""){
                     DateFormat dF = new SimpleDateFormat("dd.MM.yyyy");
@@ -81,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 //Tehdään virheen tarkistus spinnerin valinnalle
-                if(spinner.getSelectedItem() != null) {
+                if(spinner.getSelectedItemPosition() != 0) {
                     Teatteri teatteri = (Teatteri) spinner.getSelectedItem();
                     String id = teatteri.getId();
                     xml2.luexmlElokuvat(id, pvm);
@@ -113,10 +117,11 @@ public class MainActivity extends AppCompatActivity {
                         spinner.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
                     }
+
                 }else{
-                xml2.luexmlElokuvat("1014",pvm); //Jos ei olla valittu mitään spinneristä haetaan suoraan pääkaupunkiseudun elokuvat
+                /*xml2.luexmlElokuvat("1014",pvm); //Jos ei olla valittu mitään spinneristä haetaan suoraan pääkaupunkiseudun elokuvat
                 spinner.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
+                adapter.notifyDataSetChanged();*/
                 }
                 if(tarkistus == 1){ //Katsotaan onko ohjelma käynyt kellon aika vaiheessa
                     list.setAdapter(adapter2);
